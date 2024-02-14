@@ -1,0 +1,168 @@
+<!-- HTML code for the login page -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Login Page</title>
+  <!-- Link to the external CSS file -->
+  <!-- <link rel="stylesheet" href="style.css"> -->
+  <style>
+
+    /* CSS code for the login page */
+
+/* Style the body element */
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Style the container for the background image */
+.bg-img {
+  /* The image is centered and covers the entire container */
+  background-image: url("bg.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  /* The height of the container is the same as the viewport height */
+  height: 100vh;
+}
+
+/* Style the container for the login form */
+.container {
+  /* The container is placed at the center of the viewport */
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  /* The container has a white background, rounded corners, and a soft shadow */
+  background-color: pink;
+  border-radius: 25px;
+  /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
+  /* The container has a fixed width and height */
+  width: 400px;
+  height: 300px;
+  /* The container has some padding and is aligned vertically */
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Style the login form */
+#login-form {
+  /* The form takes up the remaining space of the container */
+  flex: 1;
+  /* The form has some margin and is aligned vertically */
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Style the header of the form */
+#login-form h1 {
+  /* The header has a red color and is capitalized */
+  color: rgb(250, 114, 136);
+  text-transform: uppercase;
+}
+
+/* Style the input fields of the form */
+#login-form input {
+  /* The input fields have a fixed width and height */
+  width: 300px;
+  height: 40px;
+  /* The input fields have a red border at the bottom */
+  border: none;
+  border-bottom: 2px solid rgb(230, 117, 136);
+  /* The input fields have some padding and margin */
+  padding: 10px;
+  margin: 10px;
+  /* The input fields have a placeholder text that is gray */
+  outline: none;
+  color: black;
+  font-size: 18px;
+}
+
+/* Style the button of the form */
+#login-form button {
+  /* The button has a fixed width and height */
+  width: 300px;
+  height: 40px;
+  /* The button has a red background color and white text */
+  background-color: rgb(253, 135, 174);
+  color: rgb(209, 9, 42);
+  /* The button has a border radius and a hover effect */
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+/* Style the container for the error message */
+#error-msg {
+  /* The container has a fixed height and some margin */
+  height: 40px;
+  margin: 10px;
+  /* The container has a red text color and is aligned horizontally and vertically */
+  color: palevioletred;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+  </style>
+</head>
+<body>
+
+    
+  <!-- A container for the background image -->
+  <div class="bg-img">
+    <!-- A container for the login form -->
+    <div class="container">
+      <!-- The login form with two input fields and a button -->
+      <form id="login-form">
+        <h1>LOGIN</h1>
+        <input type="text" id="username" placeholder="Username" required>
+        <input type="password" id="password" placeholder="Password" required>
+        <button type="button" id="sign-in">SIGN IN</button>
+      </form>
+      <!-- A container for the error message -->
+      <div id="error-msg"></div>
+    </div>
+  </div>
+  <!-- Link to the external JavaScript file -->
+  <script>
+    // Get the login form element
+// var loginForm = document.getElementById("login-form");
+// Get the username input element
+var usernameInput = document.getElementById("username");
+// Get the password input element
+var passwordInput = document.getElementById("password");
+// Get the sign in button element
+var signInButton = document.getElementById("sign-in");
+// Get the error message element
+// var errorMsg = document.getElementById("error-msg");`
+
+// Define the valid username and password
+var validUsername = "hablu";
+var validPassword = "sunshine";
+
+// Add a click event listener to the sign in button
+signInButton.addEventListener("click", function() {
+// Get the username and password entered by the user
+var username = usernameInput.value;
+var password = passwordInput.value;
+// Check if the username and password are valid
+if (username == validUsername && password == validPassword) {
+// If valid, show an alert dialog and reload the page
+// alert("You have successfully logged in!");
+// location.reload();
+alert("login successfully")
+window.location.href = "mine.html";
+} else {
+// If invalid, show an error message
+errorMsg.textContent = "Invalid username or password!";
+}
+});
+</script>
+</body>
+</html>
